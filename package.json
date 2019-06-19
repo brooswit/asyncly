@@ -1,0 +1,9 @@
+{
+  "name": "asyncly",
+  "version": "1.0.0",
+  "description": "async code block",
+  "main": "index.js",
+  "repository": "https://github.com/brooswit/asyncly",
+  "author": "Jay <jwinstead@launchdarkly.com>",
+  "license": "MIT"
+}
