@@ -1,3 +1,3 @@
 module.exports = exports = async (func) => {
-    return await func()
+    return func.then ? await func() : new Promise((done) => { func(done) })
 }
