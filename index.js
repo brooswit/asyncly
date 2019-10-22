@@ -6,6 +6,12 @@ async function asyncly(func) {
         });
 }
 
+asyncly.delay = async function asyncDelay(delta) {
+    return new Promise((done) => {
+        setTimeout(done, delta);
+    });
+}
+
 asyncly.sort = async function asyncSort(arr, compareFunc, left = 0, right = arr.length - 1) {
   if (left < right) {
     let i = left, j = right, tmp;
