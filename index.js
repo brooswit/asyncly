@@ -57,4 +57,18 @@ async function asyncSortGetPivot(prev, self, next, compareFunc) {
   }
 }
 
+function loop(method) {
+    let shouldStop = false;
+
+    asyncly(async()=>{
+        while(!shouldStop) {
+            await method;
+        }
+    })
+
+    return function stop() {
+        shouldStop = true;
+    }
+}
+
 module.exports = exports = asyncly;
