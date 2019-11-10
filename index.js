@@ -60,9 +60,12 @@ async function asyncSortGetPivot(prev, self, next, compareFunc) {
 function loop(method) {
     let shouldStop = false;
 
-    asyncly(async()=>{
+    asyncly(async ()=>{
+        let result;
         while(!shouldStop) {
-            await method;
+            result = await method(result);
+            if(result === undefined)
+                shouldStop = true;
         }
     })
 
