@@ -74,4 +74,22 @@ asyncly.loop = function loop(method) {
     }
 }
 
+asyncly.milli = asyncly.millis = 1;
+asyncly.second = asyncly.seconds = asyncly.millis * 1000;
+asyncly.minute = asyncly.minutes = asyncly.seconds * 60;
+asyncly.hour = asyncly.hours = asyncly.minutes * 60;
+asyncly.day = asyncly.days = asyncly.hours * 24;
+asyncly.week = asyncly.weeks = asyncly.days * 7;
+asyncly.month = asyncly.months = asyncly.days * 30;
+asyncly.year = asyncly.years = asyncly.days * 365;
+
+asyncly.getMillis = () => { Date.now(); }
+asyncly.getSeconds = () => { asyncly.getMillis() / 1000; }
+asyncly.getMinutes = () => { asyncly.getSeconds() / 60; }
+asyncly.getHours = () => { asyncly.getMinutes() / 60; }
+asyncly.getDays = () => { asyncly.getHours() / 24; }
+asyncly.getWeeks = () => { asyncly.getDays() / 7; }
+asyncly.getMonths = () => { asyncly.getDays() / 30; }
+asyncly.getYears = () => { asyncly.getDays() / 365; }
+
 module.exports = exports = asyncly;
