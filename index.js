@@ -83,13 +83,13 @@ asyncly.week = asyncly.weeks = asyncly.days * 7;
 asyncly.month = asyncly.months = asyncly.days * 30;
 asyncly.year = asyncly.years = asyncly.days * 365;
 
-asyncly.getMillis = () => { Date.now(); }
-asyncly.getSeconds = () => { asyncly.getMillis() / 1000; }
-asyncly.getMinutes = () => { asyncly.getSeconds() / 60; }
-asyncly.getHours = () => { asyncly.getMinutes() / 60; }
-asyncly.getDays = () => { asyncly.getHours() / 24; }
-asyncly.getWeeks = () => { asyncly.getDays() / 7; }
-asyncly.getMonths = () => { asyncly.getDays() / 30; }
-asyncly.getYears = () => { asyncly.getDays() / 365; }
+asyncly.getMillis = function getMillis() { return Date.now(); }
+asyncly.getSeconds = function getSeconds() { return asyncly.getMillis() / 1000; }
+asyncly.getMinutes = function getMinutes() { return asyncly.getSeconds() / 60; }
+asyncly.getHours = function getHours() { return asyncly.getMinutes() / 60; }
+asyncly.getDays = function getDays() { return asyncly.getHours() / 24; }
+asyncly.getWeeks = function getWeeks() { return asyncly.getDays() / 7; }
+asyncly.getMonths = function getMonths() { return asyncly.getDays() / 30; }
+asyncly.getYears = function getYears() { return asyncly.getDays() / 365; }
 
 module.exports = exports = asyncly;
