@@ -12,6 +12,12 @@ asyncly.delay = async function asyncDelay(delta) {
     });
 }
 
+asyncly.event = async function asyncDelay(eventEmitter, eventName) {
+    return new Promise((done) => {
+        eventEmitter.once(eventName, done);
+    });
+}
+
 asyncly.sort = async function asyncSort(arr, compareFunc, left = 0, right = arr.length - 1) {
   if (left < right) {
     let i = left, j = right, tmp;
