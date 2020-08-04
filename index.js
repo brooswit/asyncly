@@ -80,6 +80,7 @@ asyncly.loop = function loop(method) {
     }
 }
 
+
 asyncly.milli = asyncly.millis = 1;
 asyncly.second = asyncly.seconds = asyncly.millis * 1000;
 asyncly.minute = asyncly.minutes = asyncly.seconds * 60;
@@ -88,6 +89,14 @@ asyncly.day = asyncly.days = asyncly.hours * 24;
 asyncly.week = asyncly.weeks = asyncly.days * 7;
 asyncly.month = asyncly.months = asyncly.days * 30;
 asyncly.year = asyncly.years = asyncly.days * 365;
+
+asyncly.firstWednesday = 0;
+asyncly.firstThursday = firstWednesday + 1 * asyncly.day;
+asyncly.firstFriday = firstThursday + 1 * asyncly.day;
+asyncly.firstSaturday = firstFriday + 1 * asyncly.day;
+asyncly.firstSunday = firstSaturday + 1 * asyncly.day;
+asyncly.firstMonday = firstSunday + 1 * asyncly.day;
+asyncly.firstTuesday = firstMonday + 1 * asyncly.day;
 
 asyncly.getMillis = function getMillis() { return Date.now(); }
 asyncly.getSeconds = function getSeconds() { return asyncly.getMillis() / 1000; }
